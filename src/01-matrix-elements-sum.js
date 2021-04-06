@@ -6,7 +6,7 @@
  * @return {Number}
  *
  * @example
- * matrix = [
+ matrix = [
  *  [0, 1, 1, 2],
  *  [0, 5, 0, 0],
  *  [2, 0, 3, 3]
@@ -14,23 +14,16 @@
  *
  * The result should be 9
  */
-
-let matrix = [
-  [0, 1, 1, 2],
-  [0, 5, 0, 0],
-  [2, 0, 3, 3],
-];
-
 function getMatrixElementsSum(matrix) {
-  let num = 0;
+  let result = 0;
   for (let i = 0; i < matrix.length; i++) {
-    for (let k = 0; k < matrix[0].length; k++) {
-      if (i === 0 || matrix[i - 1][k] !== 0) {
-        result += matrix[i][k];
+    for (let j = 0; j < matrix[0].length; j++) {
+      if (i === 0 || matrix[i - 1][j] !== 0) {
+        result += matrix[i][j];
       }
     }
   }
-  return num;
+  return result;
 }
 
 module.exports = getMatrixElementsSum;
